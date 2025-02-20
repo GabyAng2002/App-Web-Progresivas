@@ -1,59 +1,30 @@
 #container {
   text-align: center;
-  margin-top: 10%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-  color: #ff69b4; /* Rosado fuerte */
+ion-card {
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #ffb6c1; /* Rosado suave */
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-  color: #ff69b4; /* Rosado fuerte */
-}
-
-.info-box {
-  border: 1px solid #ff69b4; /* Rosado fuerte */
-  background-color: #ffe4e1; /* Fondo rosado claro */
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  margin-top: 5%;
-  margin-left: 40%;
-  margin-right: 40%;
-}
-
-.info {
-  border: 1px solid #ff69b4; /* Rosado fuerte */
-  background-color: #ffe4e1; /* Fondo rosado claro */
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  margin-left: 45%;
-  margin-right: 45%;
-}
-
-/* Botón rosa */
-ion-button {
-  background-color: #ff69b4 !important; /* Rosado fuerte */
-  color: white !important; /* Texto blanco */
-  border-radius: 8px; /* Bordes redondeados */
-  font-size: 16px;
+ion-card-title {
+  font-size: 1.5rem;
   font-weight: bold;
-  padding: 10px 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
-ion-button:hover {
-  background-color: #ff85c4 !important; /* Color más claro al pasar el cursor */
-  transition: background-color 0.3s ease;
+ion-card-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.mensaje {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: green;
+}
+
+ion-button {
+  margin: 10px;
 }

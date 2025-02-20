@@ -1,72 +1,78 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Registro</ion-title>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <div class="container">
-    <form [formGroup]="registerForm">
-      <!-- Email -->
-      <ion-item>
-        <ion-label position="floating">Correo electrónico</ion-label>
-        <ion-input type="email" formControlName="email" inputmode="email"></ion-input>
-      </ion-item>
-      <ion-text color="danger" *ngIf="email?.invalid && email?.touched">
-        Correo inválido
-      </ion-text>
-
-      <!-- Full Name -->
-      <ion-item>
-        <ion-label position="floating">Nombre Completo</ion-label>
-        <ion-input formControlName="fullName" (ionInput)="toUpperCase()" [value]="registerForm.value.fullName"></ion-input>
-      </ion-item>
-
-      <!-- User -->
-      <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" formControlName="user"></ion-input>
-      </ion-item>
-      <ion-text color="danger" *ngIf="user?.invalid && user?.touched">
-        No se permiten espacios
-      </ion-text>
-
-      <!-- Password -->
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" formControlName="password"></ion-input>
-      </ion-item>
-
-      <!-- Confirm Password -->
-      <ion-item>
-        <ion-label position="floating">Confirmar Contraseña</ion-label>
-        <ion-input type="password" formControlName="confirmPassword"></ion-input>
-      </ion-item>
-      <ion-text *ngIf="passwordsDoNotMatch" color="danger">
-        Las contraseñas no coinciden
-      </ion-text>
-
-      <!-- Birth Date -->
-      <ion-item>
-        <ion-label position="floating">Fecha de Nacimiento</ion-label>
-        <ion-input type="date" formControlName="birthDate"></ion-input>
-      </ion-item>
-
-       <!-- Botón de Registro -->
-       <ion-button expand="block" (click)="register()" [disabled]="registerForm.invalid">
-        Registrarse
-      </ion-button>
-    </form>
+<ion-content class="ion-padding ion-text-center">
+  <div class="form-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Registro</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="registerForm">
+          <ion-item>
+            <ion-label position="floating">Correo electrónico</ion-label>
+            <ion-input type="email" formControlName="email" inputmode="email"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="email?.invalid && email?.touched">
+            Correo inválido
+          </ion-text>
+    
+          <ion-item>
+            <ion-label position="floating">Nombre Completo</ion-label>
+            <ion-input formControlName="name" (ionInput)="toUpperCase()" [value]="registerForm.value.fullName"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="user?.invalid && user?.touched">
+            No se permiten espacios
+          </ion-text>
+    
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label position="floating">Confirmar Contraseña</ion-label>
+            <ion-input type="password" formControlName="confirmPassword"></ion-input>
+          </ion-item>
+          <ion-text *ngIf="passwordsDoNotMatch" color="danger">
+            Las contraseñas no coinciden
+          </ion-text>
+    
+          <ion-item>
+            <ion-label position="floating">Fecha de Nacimiento</ion-label>
+            <ion-input type="date" formControlName="birthDate"></ion-input>
+          </ion-item>
+    
+          <ion-button expand="full" (click)="register()" [disabled]="registerForm.invalid" class="pink-button">
+            Registrarse
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
 
 <style>
-  .container {
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  ion-card {
+    width: 90%;
     max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background: white;
+  }
+  .pink-button {
+    --background: pink;
+    --color: white;
   }
 </style>
